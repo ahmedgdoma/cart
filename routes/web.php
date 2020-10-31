@@ -14,4 +14,6 @@
 //$router->get('/makeCart', function () use ($router) {
 //    return $router->app->version();
 //});
+$router->post('login', 'AuthController@login');
+
 $router->post('/makeCart', 'APIController@makeCart');

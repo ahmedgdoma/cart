@@ -21,7 +21,7 @@ abstract class MyCart implements CartItemsBuilder
     }
 
     public function makeItems(string $items) {
-        $items = explode(' ', $items);
+        $items = preg_split('/ +/', $items);
         $items = array_count_values($items);
         foreach ($items as $key => $item_count){
             $item = CartItem::find($key);
