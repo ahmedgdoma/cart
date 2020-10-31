@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Product;
+use App\Rules\itemsInProducts;
 use App\src\Cart;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,10 @@ class APIController extends Controller
     }
 
     public function makeCart(Request $request){
-//        dd(Product::with('offer')->get());
+      $this->validate($request, [
+            'currency' => 'required|string',
+            'items' => ['bail', 'required', 'string', new itemsInProducts],
+        ]);
         $cart =   Cart::makeCart($request->get('currency'), $request->get('items'));
         return $cart->checkout();
     }
