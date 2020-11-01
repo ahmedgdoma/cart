@@ -4,7 +4,13 @@ This project was generated with [Lumen website](https://lumen.laravel.com/docs/7
 
 Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
 
-## set up project
+## Requirements
+* PHP >= 7.2
+* OpenSSL PHP Extension
+* PDO PHP Extension
+* Mbstring PHP Extension
+
+## Set up project
 
 * clone the project
 * install packages `composer install`
@@ -19,7 +25,8 @@ to run phpunit testing run command `./vendor/bin/phpunit`
 ## Call APIs
 serve project with command `php -S localhost:8000 -t public`
 
-* login API
+**login API**
+
 you can  login with API `POST`  `http://localhost:8000/login`
 
  Headers: `Content-Type: application/json`
@@ -34,7 +41,7 @@ you can  login with API `POST`  `http://localhost:8000/login`
  
  2- client: Email: `client@myShop.dev` password: `client`
  
- For Admin APIs
+ For **Admin APIs**
  
  1- create new product
  
@@ -70,7 +77,7 @@ you can  login with API `POST`  `http://localhost:8000/login`
 * offer_product_count: integer to determine how many pieces extra in the offer
 * sale: is required integer and this is the offer percentage
 
-For Client API
+For **Client API**
 
  1- create a bill
  
@@ -88,11 +95,14 @@ available Currencies
 * EGP
 * Dollar
 if client choose not available currency it will change to Dollar
+
 available items
 * T-shirt $10.99
 *  Pants $14.99
 *  Jacket $19.99
 *  Shoes $24.99
+
+
 if client choose not available product an error will appear
 if user choose an item with an extra offer but didn't add the extra offer item to items 
 he will get a note that he can have an offer if item added
